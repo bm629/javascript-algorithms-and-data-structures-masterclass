@@ -31,3 +31,26 @@ graph.removeVertex('Delhi');
 
 console.log(graph.adjacencyList);
 // Outputs: { 'Mumbai': ['Chennai', 'Kolkata'], 'Chennai': ['Mumbai', 'Bangalore'], 'Kolkata': ['Mumbai', 'Bangalore'], 'Bangalore': ['Chennai', 'Kolkata'] }
+
+
+// Test DFS
+const g1 = new Graph();
+
+g1.addVetex("A");
+g1.addVetex("B");
+g1.addVetex("C");
+g1.addVetex("D");
+g1.addVetex("E");
+g1.addVetex("F");
+
+g1.addEdge("A", "B");
+g1.addEdge("A", "C");
+g1.addEdge("B", "D");
+g1.addEdge("C", "E");
+g1.addEdge("D", "E");
+g1.addEdge("D", "F");
+g1.addEdge("E", "F");
+
+console.log(g1.dfs_recursive("A"));
+console.log(g1.dfs_iterative("A"));
+console.log(g1.bfs("A"));
